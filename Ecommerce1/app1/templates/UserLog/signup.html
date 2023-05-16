@@ -1,0 +1,83 @@
+{% extends 'Master/master.html' %}
+{% load static %}
+
+{% block title %}
+<title>Signin ARU - Ecommerce </title>
+{% endblock %}
+
+{% block content %}
+<main>
+    <!-- section -->
+
+    <section class="my-lg-14 my-8">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-md-6 col-lg-4 order-lg-1 order-2">
+                    <!-- img -->
+                    <img src="{% static 'assets/images/svg-graphics/signup-g.svg' %}" alt="" class="img-fluid">
+                </div>
+                <!-- col -->
+                <div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
+                    <div class="mb-lg-9 mb-5">
+                        <h1 class="mb-1 h2 fw-bold">Get Start Shopping</h1>
+                        <p>Welcome to FreshCart! Enter your email to get started.</p>
+                    </div>
+                    <!-- form -->
+                    <div>
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div id="DivDisplayMsg" style="display: none;">
+                                <button class="close" data-close="alert"></button>
+                                <span id="SpnMsgHeader"></span>
+                                <span id="SpnErrorMsg"></span>
+                            </div>
+                            <!-- col -->
+                            <div class="col">
+                                <!-- input --><input type="text" class="form-control" name="firstname" id="firstname" placeholder="First name" aria-label="First name">
+                            </div>
+                            <div class="col">
+                                <!-- input --><input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last name" aria-label="Last name">
+                            </div>
+                            <div class="col-12">
+                                <!-- input --><input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                            </div>
+                            <div class="col-12">
+                                <!-- input --><input type="text" class="form-control" name="phone" id="phone" placeholder="Mobile No.">
+                            </div>
+                            <div class="col-12">
+
+                                <div class="password-field position-relative">
+                                    <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control">
+                                    <span><i id="passwordToggler" class="bi bi-eye-slash"></i></span>
+                                </div>
+                            </div>
+                            <!-- btn -->
+                            <div class="col-12 d-grid">
+                                <button type="submit" class="btn btn-primary" id="btnSubmit">Register</button>
+                            </div>
+
+                            <!-- text -->
+                            <p>
+                                <small>
+                                    By continuing, you agree to our <a href="#!"> Terms of Service</a> &amp; <a href="#!">
+                                        Privacy
+                                        Policy
+                                    </a>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+</main>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/signup.js' %}"></script>
+{% endblock %}

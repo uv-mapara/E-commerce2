@@ -1,0 +1,74 @@
+﻿{% extends 'Master/master.html' %}
+{% load static %}
+
+{% block title %}
+<title>Signin ARU - Ecommerce </title>
+{% endblock %}
+
+{% block content %}
+<main>
+    <!-- section -->
+    <section class="my-lg-14 my-8">
+        <div class="container">
+            <!-- row -->
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-md-6 col-lg-4 order-lg-1 order-2">
+                    <!-- img -->
+                    <img src="{% static 'assets/images/svg-graphics/signin-g.svg' %}" alt="" class="img-fluid">
+                </div>
+                <!-- col -->
+                <div class="col-12 col-md-6 offset-lg-1 col-lg-4 order-lg-2 order-1">
+                    <div class="mb-lg-9 mb-5">
+                        <h1 class="mb-1 h2 fw-bold">Sign in to ARUCart</h1>
+                        <p>Welcome back to ARUCart! Enter your email to get started.</p>
+                    </div>
+
+                    <form data-gtm-form-interact-id="0">
+                        <div class="row g-3">
+                            {% csrf_token %}
+                            <!-- row -->
+                            <div id="DivDisplayMsg" style="display: none;">
+                                <button class="close" data-close="alert"></button>
+                                <span id="SpnMsgHeader"></span>
+                                <span id="SpnErrorMsg"></span>
+                            </div>
+                            <div class="col-12">
+                                <!-- input -->
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                            </div>
+                            <div class="col-12">
+                                <!-- input -->
+                                <div class="password-field position-relative">
+                                    <input type="text" id="password" name="password" placeholder="Enter Password" class="form-control" required="" data-gtm-form-interact-field-id="0">
+                                    <span><i id="passwordToggler" class="bi bi-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <!-- form check -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <!-- label --> <label class="form-check-label" for="flexCheckDefault">
+                                        Remember me
+                                    </label>
+                                </div>
+                                <div> Forgot password? <a href="{% url 'forgot_password' %}">Reset It</a></div>
+                            </div>
+                            <!-- btn -->
+                            <div class="col-12 d-grid">
+                                <button type="submit" class="btn btn-primary" id="btnSubmit">Sign In</button>
+                            </div>
+                            <!-- link -->
+                            <div>Don’t have an account? <a href="{% url 'signup' %}"> Sign Up</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/signin.js' %}"></script>
+{% endblock %}

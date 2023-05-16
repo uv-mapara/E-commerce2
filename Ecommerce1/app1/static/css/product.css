@@ -1,0 +1,12 @@
+#slideshow {
+    display: none;
+}
+.icon-chevron-right {
+    transition: transform 0.3s ease;
+}
+.toggle{
+    transform: rotate(90deg) !important;
+}
+.offcanvas-body{
+    overflow-y:inherit !important;
+}
